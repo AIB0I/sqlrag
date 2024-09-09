@@ -1,0 +1,6 @@
+*.log
+*.DS_Store
+temp_csv_database.db
+sample_data/test
+__pycache__
+dump

@@ -6,8 +6,8 @@ sqlrag helps users to query SQL databases using natural language. It leverages L
 
 - Natural language interface for SQL queries
 - Returns both query results and the generated SQL statement
-- Currently only supports SQLite database
-- Currently only supports Ollama for language model and embeddings
+- Supports SQLite database and CSV files
+- Uses Ollama for language model and embeddings
 
 *Note: This project is currently under development.*
 
@@ -26,7 +26,8 @@ sqlrag helps users to query SQL databases using natural language. It leverages L
 
 3. Configure `.env` file:
    ```
-   DB = <sqlite_db_name>
+   DB_TYPE = <sqlite or csv>
+   DB_CONNECTION = <path_to_sqlite_db_or_csv_file>
    LLM_MODEL = <ollama_model_name>
    EMBEDDING_MODEL = <ollama_embedding_model_name>
    ```
@@ -40,21 +41,14 @@ sqlrag helps users to query SQL databases using natural language. It leverages L
 
 You can follow the instructions on the [Ollama](https://github.com/ollama/ollama) GitHub repository to install and run Ollama on your system.
 
-## Sample SQLite database:
-   
-   Create:
-   ```
-   python create_database.py
-   ```
-   Check:
-   ```
-   python check_tables.py
-   ```
+## Sample Data
+
+Sample data for both SQLite and CSV is available in the `sample_data` folder.
 
 ## TODO
 
 - [x] Add support for SQLite database
-- [ ] Add support for CSV file
+- [x] Add support for CSV file
 - [ ] Add support for PostgreSQL database
 - [ ] Add support for MySQL database
 - [ ] Implement basic web interface
